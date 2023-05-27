@@ -1,10 +1,12 @@
 const express = require('express');
-const rotas = require('./roteador');
+const rotaLivro = require('./rotas/roteador');
 
 const app = express();
 
-app.use(rotas)
+app.use(express.json())
 
+
+app.use( rotaLivro)
 const port = 8000
 
 app.listen(port, ()=>{
