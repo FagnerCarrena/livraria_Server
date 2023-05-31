@@ -1,14 +1,18 @@
-const express = require('express');
+const express = require("express");
 const rotaLivro = require('./rotas/roteador');
+const rotaFavorito = require('./rotas/favoritos');
+
 const cors = require("cors")
 const app = express();
 
 app.use(express.json())
 app.use(cors({origin:"*"}))
 
+app.use( rotaFavorito)
+
+app.use(rotaLivro );
 
 
-app.use( rotaLivro)
 const port = 8000
 
 app.listen(port, ()=>{
